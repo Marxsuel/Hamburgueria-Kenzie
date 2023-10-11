@@ -1,0 +1,42 @@
+.heading1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.625rem;
+    font-weight: bold;
+}
+
+.heading2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.375rem;
+    font-weight: bold;
+}
+
+.heading3 {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.125rem;
+    font-weight: bold;
+}
+
+
+.headline {
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+}
+
+.b600 {
+    font-weight: 600;
+    color: var(--color-primary)
+}
+
+.caption {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: var(--color-grey-300);
+}

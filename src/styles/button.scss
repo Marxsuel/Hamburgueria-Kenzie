@@ -1,0 +1,23 @@
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 8.125rem;
+    height: 3.75rem;
+    padding: 0rem 1.25rem;
+    border-radius: 0.5rem;
+    color: white;
+    background-color: var(--color-grey-100);
+
+    &.small {
+      @extend .btn;
+      height: 2.5rem;
+      background-color: var(--color-grey-100);
+    }
+    
+    &:hover {
+      background-color: #27AE60; 
+    }
+  
+  }
+  

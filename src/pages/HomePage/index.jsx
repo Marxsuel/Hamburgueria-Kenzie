@@ -3,6 +3,8 @@ import { CartModal } from "../../components/CartModal";
 import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import { productApi } from "../../services/api";
+import "../../styles/index.scss";
+
 
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);

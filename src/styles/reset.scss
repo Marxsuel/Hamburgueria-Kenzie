@@ -1,0 +1,31 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  button {
+    cursor: pointer;
+    background: transparent;
+    border: none;
+  }
+  
+  ul,
+  ol {
+    list-style: none;
+  }
+  
+  img {
+    max-width: 100%;
+  }
+  
+ /*  input {
+    background: transparent;
+
+    border-radius: 0;
+    &:focus {
+      box-shadow: 0 0 0 0;
+      outline: 0;
+    }
+  }
+   */

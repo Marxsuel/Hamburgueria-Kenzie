@@ -7,15 +7,16 @@ export const Header = () => {
    const [value, setValue] = useState("");
 
    return (
-      <header>
+      <header className={styles.HeaderContainer}>
          <img src={Logo} alt="Logo Kenzie Burguer" />
-         <div>
-            <button>
+            <button className={styles.CartButton}> 
                 <MdShoppingCart size={21} />
                 <span>0</span>
             </button>
-            <form>
+         <div  className={styles.CartContainer}>
+            <form className={styles.HeaderForm}>
                <input
+                  className= {styles.HeaderInput}
                   type="text"
                   value={value}
                   onChange={(e) => setValue(e.target.value)}
