@@ -1,4 +1,17 @@
 .listProduct {
-    display: flex;
-    flex-wrap: wrap;
+ display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    gap: 2rem;
+    margin-top: 1rem;
+    margin-left: 1rem;
+}
+
+@media (min-width: 900px) {
+    .listProduct {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 1rem;
+    }
 }

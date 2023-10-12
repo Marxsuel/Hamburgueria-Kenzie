@@ -3,22 +3,29 @@ import { CartModal } from "../../components/CartModal";
 import { Header } from "../../components/Header";
 import { ProductList } from "../../components/ProductList";
 import { productApi } from "../../services/api";
+import { ListLoading } from "../../components/ListLoading";
 import "../../styles/index.scss";
 
 
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
    const [cartList, setCartList] = useState([]);
-
+   const [Loading, setLoading] = useState([]);
 
    useEffect(() => {
       const getProduct = async () => {
          try {
+            setLoading(true);
             const { data } = await productApi.get("/products")
             setProductList(data)
+            setLoading(false);
             console.log(setProductList)
          } catch (error) {
+
             console.log(error)
+         }
+         finally{
+            setLoading(false);
          }
       }
       getProduct()
@@ -37,8 +44,8 @@ export const HomePage = () => {
    return (
       <>
          <Header />
-         <main>
-            <ProductList productList={productList} />
+         <main>  
+            {Loading ? <ListLoading/> : <ProductList productList={productList} /> }
             <CartModal cartList={cartList} />
          </main>
       </>
