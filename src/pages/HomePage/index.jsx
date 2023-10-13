@@ -10,8 +10,12 @@ import "../../styles/index.scss";
 export const HomePage = () => {
    const [productList, setProductList] = useState([]);
    const [cartList, setCartList] = useState([]);
-   const [Loading, setLoading] = useState([]);
+   const [Loading, setLoading] = useState(false);
 
+   const addCart = (product) => {
+      setCartList([...cartList, product])
+   }
+   console.log(cartList)
    useEffect(() => {
       const getProduct = async () => {
          try {
@@ -45,7 +49,7 @@ export const HomePage = () => {
       <>
          <Header />
          <main>  
-            {Loading ? <ListLoading/> : <ProductList productList={productList} /> }
+            {Loading ? <ListLoading/> : <ProductList productList={productList} setCartList={setCartList} addCart={addCart} /> }
             <CartModal cartList={cartList} />
          </main>
       </>
