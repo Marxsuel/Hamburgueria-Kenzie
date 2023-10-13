@@ -13,8 +13,10 @@ export const HomePage = () => {
    const [Loading, setLoading] = useState(false);
 
    const addCart = (product) => {
-      setCartList([...cartList, product])
-   }
+      const hasProduct = cartList.some((item) => item.id === product.id);
+      !hasProduct ? setCartList([...cartList, product]) : null;
+    };
+   console.log(cartList)    
 
    
    useEffect(() => {
