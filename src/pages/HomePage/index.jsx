@@ -15,7 +15,8 @@ export const HomePage = () => {
    const addCart = (product) => {
       setCartList([...cartList, product])
    }
-   console.log(cartList)
+
+   
    useEffect(() => {
       const getProduct = async () => {
          try {
