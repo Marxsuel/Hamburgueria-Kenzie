@@ -5,16 +5,17 @@ import { ProductList } from "../../components/ProductList";
 import { productApi } from "../../services/api";
 import { ListLoading } from "../../components/ListLoading";
 import "../../styles/index.scss";
-
+import { toast } from "react-toastify";
 
 export const HomePage = () => {
+
    const [productList, setProductList] = useState([]);
    const [cartList, setCartList] = useState([]);
    const [Loading, setLoading] = useState(false);
 
    const addCart = (product) => {
       const hasProduct = cartList.some((item) => item.id === product.id);
-      !hasProduct ? setCartList([...cartList, product]) : null;
+      !hasProduct ? setCartList([...cartList, product], toast.success("Produto adicionado ao carrinho!")) : toast.error("Já foi adicionado ao carrinho" );
     };
    console.log(cartList)    
 
@@ -26,7 +27,6 @@ export const HomePage = () => {
             const { data } = await productApi.get("/products")
             setProductList(data)
             setLoading(false);
-            console.log(setProductList)
          } catch (error) {
 
             console.log(error)
