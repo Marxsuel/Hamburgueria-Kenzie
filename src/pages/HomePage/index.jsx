@@ -8,9 +8,9 @@ import "../../styles/index.scss";
 import { toast } from "react-toastify";
 
 export const HomePage = () => {
-
+   const localProducts = localStorage.getItem("@PRODUCTS")
    const [productList, setProductList] = useState([]);
-   const [cartList, setCartList] = useState([]);
+   const [cartList, setCartList] = useState( localProducts ? JSON.parse(localProducts) : []);
    const [Loading, setLoading] = useState(false);
 
    const addCart = (product) => {
@@ -42,6 +42,12 @@ export const HomePage = () => {
       }
       getProduct()
    }, [])
+
+
+   useEffect (() => {
+      localStorage.setItem ("@PRODUCTS", JSON.stringify(cartList))
+   }, [cartList]
+   )
 
 
 
