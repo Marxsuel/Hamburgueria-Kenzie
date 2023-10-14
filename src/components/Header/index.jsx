@@ -3,7 +3,7 @@ import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import styles from "./style.module.scss"
 
-export const Header = ({setIsVisible}) => {
+export const Header = ({setIsVisible, cartList}) => {
    const [value, setValue] = useState("");
 
    return (
@@ -11,7 +11,7 @@ export const Header = ({setIsVisible}) => {
          <img src={Logo} alt="Logo Kenzie Burguer" />
             <button onClick={() => setIsVisible(true)} className={styles.CartButton}> 
                 <MdShoppingCart size={21} />
-                <span>0</span>
+                <span>{(cartList.length)}</span>
             </button>
          <div  className={styles.CartContainer}>
             <form className={styles.HeaderForm}>

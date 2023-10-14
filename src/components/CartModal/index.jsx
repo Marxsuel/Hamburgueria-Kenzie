@@ -26,8 +26,8 @@ export const CartModal = ({ cartList, clearCart, removeCart, setIsVisible }) => 
                   ))}
                </ul>
             </div>
-            <div>
-               <div className={styles.boxTotal}>
+            <div className={styles.boxTotal}>
+               <div>
                   <div className={styles.line}></div>
                   <div className={styles.value}>
                      <span>Total</span>

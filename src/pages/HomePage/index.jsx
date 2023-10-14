@@ -53,9 +53,6 @@ export const HomePage = () => {
    }, [cartList]
    )
 
-
-
-
    // useEffect montagem - carrega os produtos da API e joga em productList
    // useEffect atualização - salva os produtos no localStorage (carregar no estado)
    // adição, exclusão, e exclusão geral do carrinho
@@ -65,7 +62,7 @@ export const HomePage = () => {
 
    return (
       <>
-         <Header setIsVisible={setIsVisible} />
+         <Header cartList={cartList} setIsVisible={setIsVisible} />
          <main>
             {Loading ? <ListLoading /> : <ProductList productList={productList} setCartList={setCartList} addCart={addCart} />}
            
