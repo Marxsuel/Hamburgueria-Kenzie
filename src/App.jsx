@@ -5,7 +5,7 @@ import "react-toastify/dist/ReactToastify.css"
 function App() {
   return (
     <>
-      <HomePage />
+      <HomePage  />
       <ToastContainer /* position="botton-right" */ autoClose = { 0.5 * 1000}/>
     </>
   )

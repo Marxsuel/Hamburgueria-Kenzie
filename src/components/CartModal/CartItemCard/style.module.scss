@@ -1,0 +1,43 @@
+.boxProduct {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    margin: 10px 40px 0 20px;
+
+    button {
+        width: 15px;
+        height: 15px;
+
+        color: var(--color-grey-300);
+        background-color: transparent;
+    }
+}
+
+.productInfo {
+    display: flex;
+    width: 100%;
+    gap: 1rem;
+
+    img {
+        width: 28%;
+
+        padding: 10px;
+        border-radius: 5px;
+        background-color: var(--color-grey-100);
+    }
+
+    span {
+        color: var(--color-primary);
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        width: 100%;
+        gap: 0.5rem;
+    }
+}

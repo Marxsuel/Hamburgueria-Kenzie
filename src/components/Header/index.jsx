@@ -3,13 +3,13 @@ import Logo from "../../assets/Logo.svg";
 import { MdSearch, MdShoppingCart } from "react-icons/md";
 import styles from "./style.module.scss"
 
-export const Header = () => {
+export const Header = ({setIsVisible}) => {
    const [value, setValue] = useState("");
 
    return (
       <header className={styles.HeaderContainer}>
          <img src={Logo} alt="Logo Kenzie Burguer" />
-            <button className={styles.CartButton}> 
+            <button onClick={() => setIsVisible(true)} className={styles.CartButton}> 
                 <MdShoppingCart size={21} />
                 <span>0</span>
             </button>

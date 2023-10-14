@@ -1,9 +1,10 @@
 import { MdDelete } from "react-icons/md";
+import styles from "./style.module.scss"
 
 export const CartItemCard = ({ product, removeCart }) => {
    return (
-      <li>
-         <div>
+      <li className={styles.boxProduct}>
+         <div className={styles.productInfo}>
             <img src={product.img} alt={product.name} />
             <h3>{product.name}</h3>
          </div>

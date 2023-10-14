@@ -10,12 +10,13 @@ import { toast } from "react-toastify";
 export const HomePage = () => {
    const localProducts = localStorage.getItem("@PRODUCTS")
    const [productList, setProductList] = useState([]);
-   const [cartList, setCartList] = useState( localProducts ? JSON.parse(localProducts) : []);
+   const [cartList, setCartList] = useState(localProducts ? JSON.parse(localProducts) : []);
    const [Loading, setLoading] = useState(false);
+   const [isVisible, setIsVisible] = useState(false);
 
    const addCart = (product) => {
       const hasProduct = cartList.some((item) => item.id === product.id);
-      !hasProduct ? setCartList([...cartList, product], toast.success("Produto adicionado ao carrinho!")) : toast.error("Já foi adicionado ao carrinho");
+      !hasProduct ? setCartList([...cartList, product], setIsVisible(true) , toast.success("Produto adicionado ao carrinho!")) : toast.error("Já foi adicionado ao carrinho");
    };
 
    const removeCart = (productID) => {
@@ -24,9 +25,8 @@ export const HomePage = () => {
       toast.success("produto removido com sucesso!")
 
    }
-
    const clearCart = () => {
-      setCartList ([])
+      setCartList([])
    }
 
    useEffect(() => {
@@ -48,8 +48,8 @@ export const HomePage = () => {
    }, [])
 
 
-   useEffect (() => {
-      localStorage.setItem ("@PRODUCTS", JSON.stringify(cartList))
+   useEffect(() => {
+      localStorage.setItem("@PRODUCTS", JSON.stringify(cartList))
    }, [cartList]
    )
 
@@ -65,10 +65,17 @@ export const HomePage = () => {
 
    return (
       <>
-         <Header />
+         <Header setIsVisible={setIsVisible} />
          <main>
-            {Loading ? <ListLoading /> : <ProductList productList={productList} setCartList={setCartList} addCart={addCart}  />}
-            <CartModal cartList={cartList} removeCart={removeCart} clearCart={clearCart}  />
+            {Loading ? <ListLoading /> : <ProductList productList={productList} setCartList={setCartList} addCart={addCart} />}
+           
+            {isVisible ? 
+            <CartModal
+               setIsVisible={setIsVisible}
+               cartList={cartList}
+               removeCart={removeCart}
+               clearCart={clearCart}
+            /> : null}
          </main>
       </>
    );
