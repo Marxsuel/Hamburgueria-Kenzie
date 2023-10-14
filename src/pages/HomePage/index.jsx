@@ -38,15 +38,13 @@ export const HomePage = () => {
       setProductList(filteredProducts);
    }, [searchValue])
 
-
-
    useEffect(() => {
       const getProduct = async () => {
          try {
             setLoading(true);
             const { data } = await productApi.get("/products")
             setProductList(data)
-            setOriginalProductList(data); 
+            setOriginalProductList(data);
             setLoading(false);
          } catch (error) {
 
@@ -59,32 +57,24 @@ export const HomePage = () => {
       getProduct()
    }, [])
 
-
    useEffect(() => {
       localStorage.setItem("@PRODUCTS", JSON.stringify(cartList))
    }, [cartList]
    )
-
-   // useEffect montagem - carrega os produtos da API e joga em productList
-   // useEffect atualização - salva os produtos no localStorage (carregar no estado)
-   // adição, exclusão, e exclusão geral do carrinho
-   // renderizações condições e o estado para exibir ou não o carrinho
-   // filtro de busca
-   // estilizar tudo com sass de forma responsiva
 
    return (
       <>
          <Header cartList={cartList} setIsVisible={setIsVisible} setSearchValue={setSearchValue} />
          <main>
             {Loading ? <ListLoading /> : <ProductList productList={productList} setCartList={setCartList} addCart={addCart} />}
-           
-            {isVisible ? 
-            <CartModal
-               setIsVisible={setIsVisible}
-               cartList={cartList}
-               removeCart={removeCart}
-               clearCart={clearCart}
-            /> : null}
+
+            {isVisible ?
+               <CartModal
+                  setIsVisible={setIsVisible}
+                  cartList={cartList}
+                  removeCart={removeCart}
+                  clearCart={clearCart}
+               /> : null}
          </main>
       </>
    );

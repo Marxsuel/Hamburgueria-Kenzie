@@ -31,8 +31,8 @@ export const CartModal = ({ cartList, clearCart, removeCart, setIsVisible }) => 
                   <div className={styles.line}></div>
                   <div className={styles.value}>
                      <span>Total</span>
-                  </div>
                   <span>{total.toLocaleString('pt-BR', { style: "currency", currency: "BRL" })}</span>
+                  </div >
                </div>
                <button onClick={() => clearCart()}>Remover todos</button>
             </div>

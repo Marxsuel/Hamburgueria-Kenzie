@@ -30,9 +30,10 @@
     justify-content: center;
    
 }
-.HeadeInput {
+.HeaderInput {
+    display: flex;
+    width: 50%;
     border: 1px solid;
-    border-color: blue;
-
  
 }
+

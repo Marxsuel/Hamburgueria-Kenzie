@@ -10,7 +10,7 @@ export const Header = ({ setIsVisible, cartList, setSearchValue }) => {
       e.preventDefault()
       setValue(e.target.value)
       setSearchValue(e.target.value)
-   }
+   } 
 
    const handleSubmit = (e) => {
       e.preventDefault()
