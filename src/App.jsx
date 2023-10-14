@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <HomePage />
-      <ToastContainer/>
+      <ToastContainer /* position="botton-right" */ autoClose = { 0.5 * 1000}/>
     </>
   )
 }

@@ -25,6 +25,10 @@ export const HomePage = () => {
 
    }
 
+   const clearCart = () => {
+      setCartList ([])
+   }
+
    useEffect(() => {
       const getProduct = async () => {
          try {
@@ -64,7 +68,7 @@ export const HomePage = () => {
          <Header />
          <main>
             {Loading ? <ListLoading /> : <ProductList productList={productList} setCartList={setCartList} addCart={addCart}  />}
-            <CartModal cartList={cartList} removeCart={removeCart} />
+            <CartModal cartList={cartList} removeCart={removeCart} clearCart={clearCart}  />
          </main>
       </>
    );
