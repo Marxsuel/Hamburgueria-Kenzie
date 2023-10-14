@@ -10,13 +10,15 @@ import { toast } from "react-toastify";
 export const HomePage = () => {
    const localProducts = localStorage.getItem("@PRODUCTS")
    const [productList, setProductList] = useState([]);
-   const [cartList, setCartList] = useState(localProducts ? JSON.parse(localProducts) : []);
+   const [cartList, setCartList] = useState(localProducts ? JSON.parse(localProducts) : [])
    const [Loading, setLoading] = useState(false);
    const [isVisible, setIsVisible] = useState(false);
+   const [searchValue, setSearchValue] = useState("")
+   const [originalProductList, setOriginalProductList] = useState([])
 
    const addCart = (product) => {
-      const hasProduct = cartList.some((item) => item.id === product.id);
-      !hasProduct ? setCartList([...cartList, product], setIsVisible(true) , toast.success("Produto adicionado ao carrinho!")) : toast.error("Já foi adicionado ao carrinho");
+      const hasProduct = cartList.some((item) => item.id === product.id)
+      !hasProduct ? setCartList([...cartList, product], toast.success("Produto adicionado ao carrinho!")) : toast.error("Já foi adicionado ao carrinho")
    };
 
    const removeCart = (productID) => {
@@ -30,18 +32,28 @@ export const HomePage = () => {
    }
 
    useEffect(() => {
+      const filteredProducts = originalProductList.filter((product) =>
+         product.name.toLowerCase().includes(searchValue.toLowerCase())
+      );
+      setProductList(filteredProducts);
+   }, [searchValue])
+
+
+
+   useEffect(() => {
       const getProduct = async () => {
          try {
             setLoading(true);
             const { data } = await productApi.get("/products")
             setProductList(data)
+            setOriginalProductList(data); 
             setLoading(false);
          } catch (error) {
 
             console.log(error)
          }
          finally {
-            setLoading(false);
+            setLoading(false)
          }
       }
       getProduct()
@@ -62,7 +74,7 @@ export const HomePage = () => {
 
    return (
       <>
-         <Header cartList={cartList} setIsVisible={setIsVisible} />
+         <Header cartList={cartList} setIsVisible={setIsVisible} setSearchValue={setSearchValue} />
          <main>
             {Loading ? <ListLoading /> : <ProductList productList={productList} setCartList={setCartList} addCart={addCart} />}
            
