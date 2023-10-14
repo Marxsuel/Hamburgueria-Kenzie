@@ -13,7 +13,7 @@ export const CartModal = ({ cartList, removeCart }) => {
             <button aria-label="close" title="Fechar">
                <MdClose size={21} />
             </button>
-         </div>
+         </div>   
          <div>
             <ul>
                {cartList.map((product) => (
