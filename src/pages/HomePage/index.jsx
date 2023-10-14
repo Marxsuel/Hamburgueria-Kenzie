@@ -15,11 +15,16 @@ export const HomePage = () => {
 
    const addCart = (product) => {
       const hasProduct = cartList.some((item) => item.id === product.id);
-      !hasProduct ? setCartList([...cartList, product], toast.success("Produto adicionado ao carrinho!")) : toast.error("Já foi adicionado ao carrinho" );
-    };
-   console.log(cartList)    
+      !hasProduct ? setCartList([...cartList, product], toast.success("Produto adicionado ao carrinho!")) : toast.error("Já foi adicionado ao carrinho");
+   };
 
-   
+   const removeCart = (productID) => {
+      const newCart = cartList.filter((product) => product.id !== productID)
+      setCartList(newCart)
+      toast.success("produto removido com sucesso!")
+
+   }
+
    useEffect(() => {
       const getProduct = async () => {
          try {
@@ -31,7 +36,7 @@ export const HomePage = () => {
 
             console.log(error)
          }
-         finally{
+         finally {
             setLoading(false);
          }
       }
@@ -51,9 +56,9 @@ export const HomePage = () => {
    return (
       <>
          <Header />
-         <main>  
-            {Loading ? <ListLoading/> : <ProductList productList={productList} setCartList={setCartList} addCart={addCart} /> }
-            <CartModal cartList={cartList} />
+         <main>
+            {Loading ? <ListLoading /> : <ProductList productList={productList} setCartList={setCartList} addCart={addCart}  />}
+            <CartModal cartList={cartList} removeCart={removeCart} />
          </main>
       </>
    );

@@ -1,7 +1,7 @@
 import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
 
-export const CartModal = ({ cartList }) => {
+export const CartModal = ({ cartList, removeCart }) => {
    const total = cartList.reduce((prevValue, product) => {
       return prevValue + product.price;
    }, 0);
@@ -17,7 +17,7 @@ export const CartModal = ({ cartList }) => {
          <div>
             <ul>
                {cartList.map((product) => (
-                  <CartItemCard key={product.id} product={product} />
+                  <CartItemCard key={product.id} product={product} removeCart={removeCart} />
                ))}
             </ul>
          </div>
