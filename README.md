@@ -1,8 +1,8 @@
-<h1><strong># Hamburgueria Kenzie - React</strong></h1>
+<h1><strong> <img align="top" alt="Js" height="40" width="50" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">  Hamburgueria Kenzie - React</strong></h1>
 
-<p><strong>Visão Geral</strong></p>
+<p><strong>Visão Geral:</strong></p>
 
-<p>A aplicação <strong>Hamburgueria Kenzie - React</strong> simula um carrinho de compras, oferecendo uma experiência interativa para explorar produtos, adicionar itens ao carrinho e visualizar totais. A estilização responsiva garante uma navegação agradável em diferentes dispositivos.</p>
+<p>A aplicação <strong>Hamburgueria Kenzie</strong> simula um carrinho de compras, oferecendo uma experiência interativa para explorar produtos, adicionar itens ao carrinho e visualizar totais. A estilização responsiva garante uma navegação agradável em diferentes dispositivos.</p>
 <hr>
 <p><strong>Como Utilizar:</strong></p>
 <p><strong>Instalação das Dependências:</strong></p>
@@ -38,3 +38,19 @@ $ npm install
 <p>As informações do carrinho são automaticamente salvas no localStorage, garantindo que seus itens permaneçam mesmo ao recarregar a página.</p>
 <p><strong>4. Modal</strong></p>
 <p>O modal proporciona uma experiência intuitiva de abertura e fechamento. Ao clicar no botão "Ver Carrinho", o modal é exibido, mostrando uma visão resumida do conteúdo do carrinho. Clique fora do modal ou no botão "Fechar" para ocultá-lo.</p>
+
+<br>
+<h1>Tecnologias e Conceitos Utilizados:</h1>
+
+<p>A aplicação <strong>Hamburgueria Kenzie - React</strong> utiliza as seguintes tecnologias e conceitos:</p>
+
+<ul>
+  <li>React</li>
+  <li>SASS para estilização</li>
+  <li>Responsividade para adaptação a diferentes dispositivos</li>
+  <li>Manipulação de API para obtenção da lista de produtos</li>
+  <li>Utilização do localStorage para persistência dos dados do carrinho</li>
+  <li>Controle de estados com React Hooks, incluindo o <code>useEffect</code></li>
+  <li>O <code>useEffect</code> é utilizado para trazer os produtos da API durante a montagem do componente, garantindo que a lista esteja disponível assim que o usuário acessar a aplicação. Além disso, é empregado para atualizar dinamicamente os resultados da busca à medida que o usuário insere o nome desejado.</li>
+</ul>
+
