@@ -5,7 +5,9 @@
 <p>A aplicação <strong>Hamburgueria Kenzie</strong> simula um carrinho de compras, oferecendo uma experiência interativa para explorar produtos, adicionar itens ao carrinho e visualizar totais. A estilização responsiva garante uma navegação agradável em diferentes dispositivos.</p>
 <hr>
 <p><strong>Como Utilizar:</strong></p>
-<p><strong>Instalação das Dependências:</strong></p>
+<p>Acesse o Link abaixo para acessar a aplicação:</p>
+<p>https://m3-s3-hamburgueria-kenzie-charles-marx-c184x8d08-marxsuel.vercel.app/</p>
+<p><strong>Instalação das Dependências (opcional):</strong></p>
 
 <p>Para começar, clone o repositório e, em seguida, instale as dependências utilizando o seguinte comando no terminal:</p>
 
