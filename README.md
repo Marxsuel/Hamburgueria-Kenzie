@@ -42,7 +42,7 @@ $ npm install
 <br>
 <h1>Tecnologias e Conceitos Utilizados:</h1>
 
-<p>A aplicação <strong>Hamburgueria Kenzie - React</strong> utiliza as seguintes tecnologias e conceitos:</p>
+<p>A <strong>Hamburgueria Kenzie</strong> utiliza as seguintes tecnologias e conceitos:</p>
 
 <ul>
   <li>React</li>
