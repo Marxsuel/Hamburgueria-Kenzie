@@ -10,7 +10,7 @@
 <p>Para começar, clone o repositório e, em seguida, instale as dependências utilizando o seguinte comando no terminal:</p>
 
 
-$ git clone https://github.com/Marxsuel/m3-s3-hamburgueria-kenzie-charles-marx.git
+$ git clone https://github.com/Marxsuel/Hamburgueria-Kenzie.git
 <br>
 $ cd nome-do-repositorio
 <br>
