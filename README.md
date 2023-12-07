@@ -24,6 +24,11 @@ $ npm install
 
 <p><strong>1. Estilização</strong></p>
 <p>A estilização foi desenvolvida usando SASS para proporcionar uma experiência visual atrativa. A responsividade está integrada, garantindo uma interface adaptada a diversos tamanhos de tela.</p>
+<img width="800" heigh="600" src="https://raw.githubusercontent.com/Marxsuel/Hamburgueria-Kenzie/main/public/img2.png" alt="Desktop">
+<hr>
+<img src="https://raw.githubusercontent.com/Marxsuel/Hamburgueria-Kenzie/main/public/img1.png" alt="Mobile">
+
+
 <p><strong>2. Trazendo Produtos da API | Busca</strong></p>
 <p>Ao acessar a aplicação, a lista de produtos é automaticamente carregada a partir de uma API. Utilize o formulário de busca para encontrar produtos específicos, fornecendo o nome desejado. Os resultados são atualizados em tempo real.</p>
 <p><strong>3. Gerenciamento do Carrinho | Modal</strong></p>
